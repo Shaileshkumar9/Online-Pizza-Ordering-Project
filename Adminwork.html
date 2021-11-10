@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Pizza Ordering System</title>
+    <style>
+        *{padding: 0;margin: 0; box-sizing: border-box;}
+        .Main
+        {
+            height: 700PX;
+            width: 100%;
+        }
+        .header
+        {
+            width: 99%;
+            height: 70px;
+            background-color:gray;
+            border-radius: 20px;
+            margin: 10px;
+            
+            line-height: 5vh;
+            
+    
+            
+        }
+        .header ul
+        {
+            list-style:none;
+            display:inline-flex;
+        }
+        .header ul li
+        {
+            
+            margin-left: 15px;
+            margin-right: 15px;
+            margin-top: 8px;
+            margin-bottom: 10px;
+            
+            padding: 15px;
+            
+            
+
+        }
+        .header ul li a
+        {
+            text-decoration: none;
+            text-transform: uppercase;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            font-size: 18px;
+
+            
+
+        }
+        .header ul li:hover
+        {
+            background-color:goldenrod;
+        }
+        .container
+        {
+            width: 99%;
+            height: 700px;
+            background-color:gainsboro;
+            border-radius: 20px;
+            padding-bottom: 10px;
+            margin-left: 10px; 
+            display: inline-flex;
+           
+           
+          line-height: 4vh;
+            
+            
+            background-position: center;
+            background-size: cover;
+            background-image: url(https://i0.wp.com/post.healthline.com/wp-content/uploads/2021/07/pizza-1296x728-header.jpg?w=1155&h=1528);
+        }
+        .Button1,.Button2,.Button3,.Button4
+        {
+             
+             background-color: coral;
+            text-decoration: none;
+            font-size: 15px;
+            
+            
+            padding: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .Button2
+        {
+            margin-left: 20px;
+            margin-top: 60px;
+            margin-bottom: 585px;
+        }
+        .Button1
+        {
+            margin-left: 80px;
+            margin-top: 60px;
+            margin-bottom: 585px;
+        }
+        .Button3
+        {
+            margin-left: 250px;
+            margin-top: 60px;
+            margin-bottom: 585px;
+        }
+        .Button4
+        {
+            margin-left: 260px;
+            margin-top: 60px;
+            margin-bottom: 585px;
+        }
+      
+      
+        .Button1:hover,.Button2:hover
+        {
+            background-color: goldenrod;
+        }
+        .frame
+        {
+            margin-top: 125px;
+            margin-left: 30px;
+            background-color: wheat;
+        }
+       .field
+       {
+           display: inline-flex;
+           width: 99%;
+            height: 700px;
+            background-color:gainsboro;
+            border-radius: 20px;
+            padding-bottom: 10px;
+            margin-left: 10px; 
+            
+       }
+       .content
+       {
+           margin-top: 80px;
+           margin-left: 200px;
+           width: 350px;
+           height: 600px;
+
+       }
+       .form
+       {
+           margin-top:80px ;
+           margin-left: 50px;
+           display: table-column;
+
+       }
+        .in{
+            width: 220px;
+            height: 30px;
+            margin: 20px;
+        }
+        .bt{
+            margin: 17px;
+            padding: 10px;
+            width: 220px;
+            background-color: brown;
+        }
+    </style
+</head>
+<body>
+    
+    <div class="Main">
+    <div class="header">
+        <ul>
+            <li><a href="./adminlogin.html">Add Pizza</a></li>
+            <li><a href="#">Edit Pizza</a></li>
+            <li><a href="#">Edit Orders</a></li>
+            <li><a href="#">Update Order Status</a></li>
+            <li><a href="#">View Sales</a></li>
+            <li><a href="#">View Feedback</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+        
+
+
+    </div>
+    <div class="field">
+        <div class="content">
+            <h2 style="margin-bottom: 20px;">Welcome!</h2>
+            <img src="https://st.depositphotos.com/1003814/5052/i/950/depositphotos_50523105-stock-photo-pizza-with-tomatoes.jpg" height="300px" width="300px" alt="">
+            <p style="margin-top: 20px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut vel dolorum dolor suscipit sed, eum maxime laborum quam, veritatis minus cum obcaecati? Ipsam, asperiores? Vero culpa, iste dignissimos doloribus cumque quas a ab saepe provident similique rem reiciendis id fugiat ad repellendus, porro rerum perspiciatis? Harum dolor sit ab voluptates.</p>
+
+        </div>
+        <div class="form">
+            <h2>Add Pizza</h2>
+            <br>
+            <input type="text" placeholder="  101" class="in">
+            <br>
+            <label for="avatar">Choose a Pizza picture:</label>
+            <br>
+
+
+            <input type="file" placeholder="Choose file" class="in" >
+            <br>
+            <input type="text" placeholder="  Product Name" class="in" ">
+            <br>
+            <input type="text" placeholder="  Description" class="in">
+            <br>
+            <input type="text" placeholder="  Price" class="in">
+            <br>
+            <button class="bt"><h3>Add</h3></button>
+
+        </div>
+
+    </div>
+    </div>
+  
+
+</body>
+</html>
