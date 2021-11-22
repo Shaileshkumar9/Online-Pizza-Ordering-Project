@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Order Form</title>
+    <style>
+        h1{
+            text-align: center;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 40px;
+        }
+        form{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-align: center;
+        }
+        .custom-table tr, .custom-table th{
+            text-align: center;
+            width: 180px;
+        }
+        .custom-table{
+            margin: 10px auto;
+        }
+        img{
+            width: 200px;
+            height: 140px;
+            border-radius: 15px;
+        }
+        input{
+            text-align: center;
+            font-weight: bold;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+        td{
+            font-weight: bold;
+        }
+        .bot{
+            display: inline-flex;
+            
+        }
+        .cal{
+            margin-right: 40px;
+        }
+        .clr{
+            margin-left: 20px;
+        }
+        .div2
+        {
+            width: 100%;
+            height: 300px;
+        }
+        .list
+        {
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin: auto; 
+            margin-top: 100px;
+        }
+        .or1,.or2,.or3,.or4,.or5,.or6
+        {
+            
+            border: 1px solid black;
+            text-align: center;
+            padding: 20px;
+            margin-right: 10px;
+            
+        } 
+        .shailesh
+        {
+            padding: 10px;
+            border-radius: 5px;
+            background-color: green;
+            font-size: 15px;
+            padding-left: 15px;
+            padding-right: 10px;
+            color: white;
+
+        }
+        
+    </style>
+</head>
+<body bgcolor="#F5A462">
+    <h1><i>Pizza Order Form</i></h1><br>
+    <form class="order" onsubmit="event.preventDefault();onformsubmit9();">
+        <div class="bot">
+            <div class="cal"><b>Customer Name</b> <input type="text" size="25" id="uname" onkeyup="name();"></div>
+            <div class="clr"><b>Phone Number</b> <input type="text" size="20" id="uphone" onkeyup="phone();"></div> 
+        </div><br>  
+        <table class="custom-table">
+            <tr>
+                <th>Pizza Image</th>
+                <th>Pizza Choice</th>
+                <th>Quantity</th>
+                <th>Unit Price</th>
+                <th>Total Price</th>
+            </tr>
+            
+            <tr>
+                <td><img src="https://www.oetker.in/Recipe/Recipes/oetker.in/in-en/pizza/image-thumb__52711__RecipeDetailsLightBox/pizza-pollo-arrosto.jpg"></td>
+                <td><input type="checkbox"  id="chk1" name="chk1" value="Big Italy">Big Italy</td>
+                <td><input type="text" size="8"  id="pizza01" onkeyup="mult1(this.value);" name="pizza01" ></td>
+                <td><input type="text" size="10"   value=" 159.00" name="price" id="price"></td>
+                <td><input type="text" size="10" id="tot1" value="0" name="tot1"></td>
+                <td><button onclick="onformsubmit();" class="shailesh">Add</button></td>
+                
+               
+            </tr>
+            </form>
+            <tr>
+                <td><img src="https://st.depositphotos.com/1003814/5052/i/950/depositphotos_50523105-stock-photo-pizza-with-tomatoes.jpg"></td>
+                <td><input type="checkbox" value="Veggie" id="chk2">Veggie Pizza</td>
+                <td><input type="text" size="8" onkeyup="mult2(this.value);" name="pizza02" id="pizza02" ></td>
+                <td><input type="text" size="10" value="Rs 200.00" id="price2" name="price2"></td>
+                <td><input type="text" size="10" id="tot2" value="0" name="tot2" ></td>
+                <td><button onclick="onformsubmit2();"class="shailesh" >Add</button></td>
+                
+            </tr>
+            <tr>
+                <td><img src="https://b.zmtcdn.com/data/pictures/2/19639672/85218340ac065063a5fceb560166cc69.jpg"></td>
+                <td><input type="checkbox" value="Cheese" id="chk3">Cheese Pizza</td>
+                <td><input type="text" size="8" onkeyup="mult3(this.value);" id="pizza03" name="pizza03"></td>
+                <td><input type="text" size="10" value="Rs 99.00" id="price3" name="price3"></td>
+                <td><input type="text" size="10" id="tot3" value="0"></td>
+                <td><button onclick="onformsubmit3();" class="shailesh">Add</button></td>
+            </tr>
+            <tr>
+                <td><img src="https://st.depositphotos.com/1020618/2013/i/600/depositphotos_20136185-stock-photo-delicious-italian-pizza.jpg"></td>
+                <td><input type="checkbox" value="Fruit" id="chk4">Fruit Pizza</td>
+                <td><input type="text" size="8" onkeyup="mult4(this.value);" id="pizza04" name="pizza04" ></td>
+                <td><input type="text" size="10" value="Rs 150.00" id="price4" name="price4"></td>
+                <td><input type="text" size="10" id="tot4"  value="0" ></td>
+                <td><button onclick="onformsubmit4();"class="shailesh" >Add</button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td style="font-size: 30px;"><b>Total</b></td>
+                <td><input type="text" size="10" id="htot" ></td>
+            </tr>
+        </table><br>
+        <div class="bot">
+            <div class="cal"><input type="button" onclick="totalcalc();" style="font-size: 25px;" value="Calculate Order Total"/></div>
+            <div class="clr">
+                <input type="submit"  style="font-size: 25px;" value="Place Order" />
+            </div>
+            
+            <div class="order2" style="margin-left: 20px;">
+                
+                
+                <button onclick="placeorder()" style="background-color: darkgoldenrod; padding: .5px;"> Place Order</button>
+            
+            </div>
+        
+        </div>
+        
+    </form>
+   
+    <div class="div2" style="border-top: 2px solid black; margin-top: 30px; margin-bottom: 80px;">
+        <h1 style="text-align: center; margin-top: 50px;color: red;">Your Orders</h2>
+            <h2 style="text-align: left;" id="names">Name- </h2>
+            <h2 style="text-align: left;" id="phones">Phone Number-</h2>
+          <table class="list" id="orderlist">
+              <thead>
+                  <tr class="or1">
+                      <th class="or2">Pizza Name</th>
+                      <th class="or3">Quentity</th>
+                      <th class="or4">Price</th>
+                      <th class="or5">Total</th>
+                      <th></th>
+                  </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+          </table>
+    </div>
+    <script>
+        
+        function mult1(value)
+        {
+        var field1= value;
+        
+
+        var result=field1*159;
+        
+            document.getElementById("tot1").value=result;
+    
+        
+        
+    }
+    function mult2(value)
+        {
+        var field1= value;
+        
+
+        var result=field1*200;
+        
+            document.getElementById("tot2").value=result;
+    
+        
+        
+    }
+    function mult3(value)
+        {
+        var field1= value;
+        
+
+        var result=field1*99;
+        
+            document.getElementById("tot3").value=result;
+        
+        
+    }
+    function mult4(value)
+        {
+        var field1= value;
+        
+
+        var result=field1*150;
+        
+            document.getElementById("tot4").value=result;
+        
+        
+    }
+    function totalcalc()
+    {
+        var x=document.getElementById("tot1").value;
+        var y=document.getElementById("tot2").value;
+        var z=document.getElementById("tot3").value;
+        var z1=document.getElementById("tot4").value;
+       
+        var t=parseFloat(x)+ parseFloat(y)+parseFloat(z)+ parseFloat(z1);
+        document.getElementById("htot").value=t;
+
+    }
+    function placeorder()
+    { 
+        
+        window.location="seeorder.html";
+        var q=10;
+        
+         localStorage.setItem("ti",89);
+         var i=localStorage.getItem('ti');
+         
+        
+        
+        
+      
+      
+        
+    }
+    var selectedrow=null;
+   
+    
+    function onformsubmit()
+    {
+        var formdata=readformdata();
+        insertdata(formdata);
+        resetform();
+
+    }
+    function readformdata()
+    {
+        var formdata={};
+        formdata["chk1"]=document.getElementById("chk1").value;
+        formdata["pizza01"]=document.getElementById("pizza01").value;
+        formdata["price"]=document.getElementById("price").value;
+        formdata["tot1"]=document.getElementById("tot1").value;
+        return formdata;
+    }
+    function insertdata(data)
+    {
+        var table=document.getElementById("orderlist").getElementsByTagName('tbody')[0];
+        var newRow=table.insertRow(table.length);
+        cell1=newRow.insertCell(0);
+        cell1.innerHTML=data.chk1;
+        cell2=newRow.insertCell(1);
+        cell2.innerHTML=data.pizza01;
+        cell3=newRow.insertCell(2);
+        cell3.innerHTML=data.price;
+        cell4=newRow.insertCell(3);
+        cell4.innerHTML=data.tot1;
+        cell4=newRow.insertCell(4);
+        cell4.innerHTML = `
+                        <a onClick="ondelete(this)">Delete</a>`;
+
+        
+       
+                         
+
+    }
+    function resetform()
+    {
+        document.getElementById('pizza01').value="";
+        selectedrow=null;
+    
+    }
+    
+    
+    function ondelete(td)
+    {
+        if(confirm('Are you sure to delete'))
+        {
+        row=td.parentElement.parentElement;
+        document.getElementById("orderlist").deleteRow(row.rowIndex);
+        resetform();
+        }
+    }
+    function onformsubmit3()
+    {
+        var formdata3=readformdata3();
+        insertdata3(formdata3);
+        resetform3();
+
+    }
+    function readformdata3()
+    {
+        var formdata3={};
+        formdata3["chk3"]=document.getElementById("chk3").value;
+        formdata3["pizza03"]=document.getElementById("pizza03").value;
+        formdata3["price3"]=document.getElementById("price3").value;
+        formdata3["tot3"]=document.getElementById("tot3").value;
+        return formdata3;
+    }
+    function insertdata3(data)
+    {
+        var table=document.getElementById("orderlist").getElementsByTagName('tbody')[0];
+        var newRow=table.insertRow(table.length);
+        cell1=newRow.insertCell(0);
+        cell1.innerHTML=data.chk3;
+        cell2=newRow.insertCell(1);
+        cell2.innerHTML=data.pizza03;
+        cell3=newRow.insertCell(2);
+        cell3.innerHTML=data.price3;
+        cell4=newRow.insertCell(3);
+        cell4.innerHTML=data.tot3;
+        cell4=newRow.insertCell(4);
+        cell4.innerHTML = `
+                        <a onClick="ondelete3(this)">Delete</a>`;
+
+        
+       
+                         
+
+    }
+    function resetform3()
+    {
+        document.getElementById('pizza03').value="";
+        selectedrow=null;
+    
+    }
+    
+    
+    function ondelete3(td)
+    {
+        if(confirm('Are you sure to delete'))
+        {
+        row=td.parentElement.parentElement;
+        document.getElementById("orderlist").deleteRow(row.rowIndex);
+        resetform3();
+        }
+    }
+    function onformsubmit2()
+    {
+        var formdata2=readformdata2();
+        insertdata2(formdata2);
+        resetform2();
+
+    }
+    function readformdata2()
+    {
+        var formdata2={};
+        formdata2["chk2"]=document.getElementById("chk2").value;
+        formdata2["pizza02"]=document.getElementById("pizza02").value;
+        formdata2["price2"]=document.getElementById("price2").value;
+        formdata2["tot2"]=document.getElementById("tot2").value;
+        return formdata2;
+    }
+    function insertdata2(data)
+    {
+        var table=document.getElementById("orderlist").getElementsByTagName('tbody')[0];
+        var newRow=table.insertRow(table.length);
+        cell1=newRow.insertCell(0);
+        cell1.innerHTML=data.chk2;
+        cell2=newRow.insertCell(1);
+        cell2.innerHTML=data.pizza02;
+        cell3=newRow.insertCell(2);
+        cell3.innerHTML=data.price2;
+        cell4=newRow.insertCell(3);
+        cell4.innerHTML=data.tot2;
+        cell4=newRow.insertCell(4);
+        cell4.innerHTML = `
+                        <a onClick="ondelete2(this)">Delete</a>`;
+
+        
+       
+                         
+
+    }
+    function resetform2()
+    {
+        document.getElementById('pizza02').value="";
+        selectedrow=null;
+    
+    }
+    
+    
+    function ondelete2(td)
+    {
+        if(confirm('Are you sure to delete'))
+        {
+        row=td.parentElement.parentElement;
+        document.getElementById("orderlist").deleteRow(row.rowIndex);
+        resetform2();
+        }
+    }
+    function onformsubmit4()
+    {
+        var formdata4=readformdata4();
+        insertdata4(formdata4);
+        resetform4();
+
+    }
+    function readformdata4()
+    {
+        var formdata4={};
+        formdata4["chk4"]=document.getElementById("chk4").value;
+        formdata4["pizza04"]=document.getElementById("pizza04").value;
+        formdata4["price4"]=document.getElementById("price4").value;
+        formdata4["tot4"]=document.getElementById("tot4").value;
+        return formdata4;
+    }
+    function insertdata4(data)
+    {
+        var table=document.getElementById("orderlist").getElementsByTagName('tbody')[0];
+        var newRow=table.insertRow(table.length);
+        cell1=newRow.insertCell(0);
+        cell1.innerHTML=data.chk4;
+        cell2=newRow.insertCell(1);
+        cell2.innerHTML=data.pizza04;
+        cell3=newRow.insertCell(2);
+        cell3.innerHTML=data.price4;
+        cell4=newRow.insertCell(3);
+        cell4.innerHTML=data.tot4;
+        cell4=newRow.insertCell(4);
+        cell4.innerHTML = `
+                        <a onClick="ondelete4(this)">Delete</a>`;
+
+        
+       
+                         
+
+    }
+    function resetform4()
+    {
+        document.getElementById('pizza04').value="";
+        selectedrow=null;
+    
+    }
+    
+    
+    function ondelete4(td)
+    {
+        if(confirm('Are you sure to delete'))
+        {
+        row=td.parentElement.parentElement;
+        document.getElementById("orderlist").deleteRow(row.rowIndex);
+        resetform2();
+        }
+    }
+    function name()
+    {
+
+    }
+    function phone()
+    {
+
+    }
+
+
+
+
+
+    </script>
+</body>
+</html>

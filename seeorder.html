@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body
+        {
+           background-color: cornsilk;
+        }
+        table
+        {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        tr,th,td{
+            border: 1px solid black;
+            text-align: center;
+            padding: 20px;
+            margin-right: 10px;
+            
+        }
+        .container
+        {
+            margin-left: 40px;
+        }
+        
+    
+        .pic
+        {
+            width: 300px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container" >
+        <h2 style="text-align: center;">Orders</h2>
+       
+        <table id="ordertable">
+            <h3 >Name:-<span id="rt"></span>
+             </h3>
+        <h3>Phone Number-<span id="userphone"></span></h3>
+            <tr>
+                <th>Pizza</th><th>Quentity</th> <th>Rate</th> <th>Hole Total</th>
+            </tr
+        </table>
+       
+    </div>
+    <script>
+        var io=localStorage.getItem('ti');
+     
+       
+        alert("value is "+ io);
+        
+
+      
+    
+        
+    </script>
+    
+</body>
+</html>
