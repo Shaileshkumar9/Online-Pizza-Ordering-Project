@@ -49,7 +49,7 @@
         .div2
         {
             width: 100%;
-            height: 300px;
+            height: 400px;
         }
         .list
         {
@@ -83,11 +83,14 @@
 </head>
 <body bgcolor="#F5A462">
     <h1><i>Pizza Order Form</i></h1><br>
-    <form class="order" onsubmit="event.preventDefault();onformsubmit9();">
-        <div class="bot">
-            <div class="cal"><b>Customer Name</b> <input type="text" size="25" id="uname" onkeyup="name();"></div>
-            <div class="clr"><b>Phone Number</b> <input type="text" size="20" id="uphone" onkeyup="phone();"></div> 
-        </div><br>  
+    
+        <div class="bot" style="margin-top: 30px; margin-bottom: 20px;">
+           
+            <div class="cal" style="margin-left: 20px;"><b>Customer Name</b> <input type="text" size="25" id="uname" onkeyup="nameo(this.value);"></div>
+            <div class="clr"><b>Phone Number</b> <input type="text" size="20" id="uphone" onkeyup="phoneo(this.value);"></div> 
+          <a href="index.html" style="margin-left: 520px; padding: 10px; background-color: red; color: white; text-decoration: none;"  >Logout</a>
+        </div><br> 
+        <form class="order">
         <table class="custom-table">
             <tr>
                 <th>Pizza Image</th>
@@ -103,7 +106,7 @@
                 <td><input type="text" size="8"  id="pizza01" onkeyup="mult1(this.value);" name="pizza01" ></td>
                 <td><input type="text" size="10"   value=" 159.00" name="price" id="price"></td>
                 <td><input type="text" size="10" id="tot1" value="0" name="tot1"></td>
-                <td><button onclick="onformsubmit();" class="shailesh">Add</button></td>
+                <td><button onclick="onformsubmit();event.preventDefault(); " class="shailesh">Add</button></td>
                 
                
             </tr>
@@ -114,7 +117,7 @@
                 <td><input type="text" size="8" onkeyup="mult2(this.value);" name="pizza02" id="pizza02" ></td>
                 <td><input type="text" size="10" value="Rs 200.00" id="price2" name="price2"></td>
                 <td><input type="text" size="10" id="tot2" value="0" name="tot2" ></td>
-                <td><button onclick="onformsubmit2();"class="shailesh" >Add</button></td>
+                <td><button onclick="onformsubmit2();event.preventDefault();"class="shailesh" >Add</button></td>
                 
             </tr>
             <tr>
@@ -123,7 +126,7 @@
                 <td><input type="text" size="8" onkeyup="mult3(this.value);" id="pizza03" name="pizza03"></td>
                 <td><input type="text" size="10" value="Rs 99.00" id="price3" name="price3"></td>
                 <td><input type="text" size="10" id="tot3" value="0"></td>
-                <td><button onclick="onformsubmit3();" class="shailesh">Add</button></td>
+                <td><button onclick="onformsubmit3();event.preventDefault(); " class="shailesh">Add</button></td>
             </tr>
             <tr>
                 <td><img src="https://st.depositphotos.com/1020618/2013/i/600/depositphotos_20136185-stock-photo-delicious-italian-pizza.jpg"></td>
@@ -131,7 +134,7 @@
                 <td><input type="text" size="8" onkeyup="mult4(this.value);" id="pizza04" name="pizza04" ></td>
                 <td><input type="text" size="10" value="Rs 150.00" id="price4" name="price4"></td>
                 <td><input type="text" size="10" id="tot4"  value="0" ></td>
-                <td><button onclick="onformsubmit4();"class="shailesh" >Add</button></td>
+                <td><button onclick="onformsubmit4(); event.preventDefault();"class="shailesh" >Add</button></td>
             </tr>
             <tr>
                 <td></td>
@@ -144,7 +147,7 @@
         <div class="bot">
             <div class="cal"><input type="button" onclick="totalcalc();" style="font-size: 25px;" value="Calculate Order Total"/></div>
             <div class="clr">
-                <input type="submit"  style="font-size: 25px;" value="Place Order" />
+                
             </div>
             
             <div class="order2" style="margin-left: 20px;">
@@ -158,10 +161,13 @@
         
     </form>
    
-    <div class="div2" style="border-top: 2px solid black; margin-top: 30px; margin-bottom: 80px;">
+    <div class="div2" style="border-top: 2px solid black; margin-top: 30px; margin-bottom: 150px;">
         <h1 style="text-align: center; margin-top: 50px;color: red;">Your Orders</h2>
-            <h2 style="text-align: left;" id="names">Name- </h2>
-            <h2 style="text-align: left;" id="phones">Phone Number-</h2>
+            <div>
+            <h2 style="text-align: left;" >Name- <span id="names"></span> </h2>
+            
+        </div>
+            <h2 style="text-align: left;" id="phoneoo">Phone Number-<span id="phones"></span></h2>
           <table class="list" id="orderlist">
               <thead>
                   <tr class="or1">
@@ -239,11 +245,16 @@
     function placeorder()
     { 
         
-        window.location="seeorder.html";
+       
         var q=10;
         
-         localStorage.setItem("ti",89);
-         var i=localStorage.getItem('ti');
+         localStorage.setItem("ti",q);
+         
+         
+         return;
+         
+         
+        
          
         
         
@@ -471,12 +482,20 @@
         resetform2();
         }
     }
-    function name()
+    function nameo(value)
     {
-
+        var g=value;
+        document.getElementById("names").innerHTML=g;
+        document.getElementById("names").style.color="white";
+        
+        
+               
     }
-    function phone()
+    function phoneo(value)
     {
+        var j=value;
+        document.getElementById("phones").innerHTML=j;
+        document.getElementById("phones").style.color="white";
 
     }
 
