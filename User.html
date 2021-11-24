@@ -78,6 +78,22 @@
             color: white;
 
         }
+        @media(max-width:870px)
+{
+    
+    .bot
+    {
+        display: block;
+    }
+    .logu
+    {
+        margin-left: 10px;
+    }
+    .ss
+    {
+        display: block;
+    }
+}
         
     </style>
 </head>
@@ -88,8 +104,9 @@
            
             <div class="cal" style="margin-left: 20px;"><b>Customer Name</b> <input type="text" size="25" id="uname" onkeyup="nameo(this.value);"></div>
             <div class="clr"><b>Phone Number</b> <input type="text" size="20" id="uphone" onkeyup="phoneo(this.value);"></div> 
-          <a href="index.html" style="margin-left: 520px; padding: 10px; background-color: red; color: white; text-decoration: none;"  >Logout</a>
+          <a href="index.html" style="margin-left: 520px; padding: 10px; background-color: red; color: white; text-decoration: none;" class="logu"  >Logout</a>
         </div><br> 
+        <div class="ss">
         <form class="order">
         <table class="custom-table">
             <tr>
@@ -144,18 +161,14 @@
                 <td><input type="text" size="10" id="htot" ></td>
             </tr>
         </table><br>
+        </div>
         <div class="bot">
             <div class="cal"><input type="button" onclick="totalcalc();" style="font-size: 25px;" value="Calculate Order Total"/></div>
             <div class="clr">
                 
             </div>
             
-            <div class="order2" style="margin-left: 20px;">
-                
-                
-                <button onclick="placeorder()" style="background-color: darkgoldenrod; padding: .5px;"> Place Order</button>
-            
-            </div>
+         
         
         </div>
         
