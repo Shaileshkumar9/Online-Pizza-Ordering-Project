@@ -290,10 +290,11 @@
             <li><a href="./adminlogin.html">Add Pizza</a></li>
             <li><a href="#">Edit Pizza</a></li>
             <li><a href="#">Edit Orders</a></li>
-            <li><a href="#">Update Order Status</a></li>
-            <li><a href="#">View Sales</a></li>
-            <li><a href="#">View Feedback</a></li>
-            <li><a href="./index.html">Logout</a></li>
+            
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li style="margin-left: 450px;"><a href="./index.html">Logout</a></li>
             <label for="chk" class="close-btn">
                     <i class="fa fa-times" ></i>
 
@@ -314,7 +315,7 @@
         <div class="form">
             <h2>Add Pizza</h2>
             <br>
-            <input type="text" placeholder="  101" class="in">
+            <input type="text" placeholder="  101" class="in" id="pronumber">
             <br>
             <label for="avatar">Choose a Pizza picture:</label>
             <br>
@@ -322,27 +323,20 @@
 
             <input type="file" placeholder="Choose file" class="in" >
             <br>
-            <input type="text" placeholder="  Product Name" class="in" ">
+            <input type="text" placeholder="  Product Name" class="in"  id="proname">
             <br>
-            <input type="text" placeholder="  Description" class="in">
+            <input type="text" placeholder="  Description" class="in" id="dec">
             <br>
-            <input type="text" placeholder="  Price" class="in">
+            <input type="text" placeholder="  Price" class="in" id="price">
             <br>
-            <button class="bt" onclick="addpizza();"><h3>Add</h3></button>
+            <button class="bt" onclick="addpizza();event.preventDefault();"><h3>Add</h3></button>
 
         </div>
 
     </div>
+    <script src="user.js"></script>
     
-    <script>
-
-
-        function addpizza()
-        {
-            
-        }
-        
-        </script>
+    
   
 
 </body>

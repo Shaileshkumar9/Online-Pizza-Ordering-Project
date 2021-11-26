@@ -1,210 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pizza Order Form</title>
-    <style>
-        h1{
-            text-align: center;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            font-size: 40px;
-        }
-        form{
-            font-family: Georgia, 'Times New Roman', Times, serif;
-            text-align: center;
-        }
-        .custom-table tr, .custom-table th{
-            text-align: center;
-            width: 180px;
-        }
-        .custom-table{
-            margin: 10px auto;
-        }
-        img{
-            width: 200px;
-            height: 140px;
-            border-radius: 15px;
-        }
-        input{
-            text-align: center;
-            font-weight: bold;
-            border: 2px solid black;
-            border-radius: 5px;
-        }
-        td{
-            font-weight: bold;
-        }
-        .bot{
-            display: inline-flex;
-            
-        }
-        .cal{
-            margin-right: 40px;
-        }
-        .clr{
-            margin-left: 20px;
-        }
-        .div2
-        {
-            width: 100%;
-            height: 400px;
-        }
-        .list
-        {
-            border: 1px solid black;
-            border-collapse: collapse;
-            margin: auto; 
-            margin-top: 100px;
-        }
-        .or1,.or2,.or3,.or4,.or5,.or6
-        {
-            
-            border: 1px solid black;
-            text-align: center;
-            padding: 20px;
-            margin-right: 10px;
-            
-        } 
-        .shailesh
-        {
-            padding: 10px;
-            border-radius: 5px;
-            background-color: green;
-            font-size: 15px;
-            padding-left: 15px;
-            padding-right: 10px;
-            color: white;
 
-        }
-        @media(max-width:870px)
-{
-    
-    .bot
-    {
-        display: block;
-    }
-    .logu
-    {
-        margin-left: 10px;
-    }
-    .ss
-    {
-        display: block;
-        
-    }
-}
-        
-    </style>
-</head>
-<body bgcolor="#F5A462">
-    <h1><i>Pizza Order Form</i></h1><br>
-    
-        <div class="bot" style="margin-top: 30px; margin-bottom: 20px;">
-           
-            <div class="cal" style="margin-left: 20px;"><b>Customer Name</b> <input type="text" size="25" id="uname" onkeyup="nameo(this.value);"></div>
-            <div class="clr"><b>Phone Number</b> <input type="text" size="20" id="uphone" onkeyup="phoneo(this.value);"></div> 
-          <a href="index.html" style="margin-left: 520px; padding: 10px; background-color: red; color: white; text-decoration: none;" class="logu"  >Logout</a>
-        </div><br> 
-        <div class="ss">
-        <form class="order">
-        <table class="custom-table" id="kalu">
-            <tr>
-                <th>Pizza Image</th>
-                <th>Pizza Choice</th>
-                <th>Quantity</th>
-                <th>Unit Price</th>
-                <th>Total Price</th>
-            </tr>
-            
-            <tr>
-                <td><img src="https://www.oetker.in/Recipe/Recipes/oetker.in/in-en/pizza/image-thumb__52711__RecipeDetailsLightBox/pizza-pollo-arrosto.jpg"></td>
-                <td><input type="checkbox"  id="chk1" name="chk1" value="Big Italy">Big Italy</td>
-                <td><input type="text" size="8"  id="pizza01" onkeyup="mult1(this.value);" name="pizza01" ></td>
-                <td><input type="text" size="10"   value=" 159.00" name="price" id="price"></td>
-                <td><input type="text" size="10" id="tot1" value="0" name="tot1"></td>
-                <td><button onclick="onformsubmit();event.preventDefault(); " class="shailesh">Add</button></td>
-                
-               
-            </tr>
-            </form>
-            <tr>
-                <td><img src="https://st.depositphotos.com/1003814/5052/i/950/depositphotos_50523105-stock-photo-pizza-with-tomatoes.jpg"></td>
-                <td><input type="checkbox" value="Veggie" id="chk2">Veggie Pizza</td>
-                <td><input type="text" size="8" onkeyup="mult2(this.value);" name="pizza02" id="pizza02" ></td>
-                <td><input type="text" size="10" value="Rs 200.00" id="price2" name="price2"></td>
-                <td><input type="text" size="10" id="tot2" value="0" name="tot2" ></td>
-                <td><button onclick="onformsubmit2();event.preventDefault();"class="shailesh" >Add</button></td>
-                
-            </tr>
-            <tr>
-                <td><img src="https://b.zmtcdn.com/data/pictures/2/19639672/85218340ac065063a5fceb560166cc69.jpg"></td>
-                <td><input type="checkbox" value="Cheese" id="chk3">Cheese Pizza</td>
-                <td><input type="text" size="8" onkeyup="mult3(this.value);" id="pizza03" name="pizza03"></td>
-                <td><input type="text" size="10" value="Rs 99.00" id="price3" name="price3"></td>
-                <td><input type="text" size="10" id="tot3" value="0"></td>
-                <td><button onclick="onformsubmit3();event.preventDefault(); " class="shailesh">Add</button></td>
-            </tr>
-            <tr>
-                <td><img src="https://st.depositphotos.com/1020618/2013/i/600/depositphotos_20136185-stock-photo-delicious-italian-pizza.jpg"></td>
-                <td><input type="checkbox" value="Fruit" id="chk4">Fruit Pizza</td>
-                <td><input type="text" size="8" onkeyup="mult4(this.value);" id="pizza04" name="pizza04" ></td>
-                <td><input type="text" size="10" value="Rs 150.00" id="price4" name="price4"></td>
-                <td><input type="text" size="10" id="tot4"  value="0" ></td>
-                <td><button onclick="onformsubmit4(); event.preventDefault();"class="shailesh" >Add</button></td>
-            </tr>
-            <tbody id="adminA">
-
-            </tbody>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td style="font-size: 30px;"><b>Total</b></td>
-                <td><input type="text" size="10" id="htot" ></td>
-            </tr>
-            
-        </table><br>
-        </div>
-        <div class="bot">
-            <div class="cal"><input type="button" onclick="totalcalc();" style="font-size: 25px;" value="Calculate Order Total"/></div>
-            <div class="clr">
-                    <button onclick="ss();" id="addd">Only Admin</button>
-            </div>
-            
-         
-        
-        </div>
-        
-    </form>
-   
-    <div class="div2" style="border-top: 2px solid black; margin-top: 30px; margin-bottom: 150px;">
-        <h1 style="text-align: center; margin-top: 50px;color: red;">Your Orders</h2>
-            <div>
-            <h2 style="text-align: left;" >Name- <span id="names"></span> </h2>
-            
-        </div>
-            <h2 style="text-align: left;" id="phoneoo">Phone Number-<span id="phones"></span></h2>
-          <table class="list" id="orderlist">
-              <thead>
-                  <tr class="or1">
-                      <th class="or2">Pizza Name</th>
-                      <th class="or3">Quentity</th>
-                      <th class="or4">Price</th>
-                      <th class="or5">Total</th>
-                      <th></th>
-                  </tr>
-              </thead>
-              <tbody>
-
-              </tbody>
-          </table>
-    </div>
-    <script src="user.js"></script>
-   <!-- <script>
-        
-        function mult1(value)
+function mult1(value)
         {
         var field1= value;
         
@@ -517,6 +312,51 @@
         document.getElementById("phones").style.color="white";
 
     }
+    
+
+
+    function addpizza()
+    {
+        var name1= document.getElementById('pronumber').value;
+        var name2= document.getElementById('proname').value;
+        var name3= document.getElementById('dec').value;
+        var name4= document.getElementById('price').value;
+        sessionStorage.setItem("value1",name1);
+        sessionStorage.setItem("value2",name2);
+        sessionStorage.setItem("value3",name3);
+        sessionStorage.setItem("value4",name4);
+        resetform();
+       
+        
+        window.location.href="User.html";
+        
+        
+        
+
+        
+    }
+    function resetform()
+{
+    document.getElementById('pronumber').value="";
+    document.getElementById('proname').value="";
+    document.getElementById('dec').value="";
+    document.getElementById('price').value="";
+    selectedrow=null;
+
+}
+if(sessionStorage.getItem("value1")==null)
+{
+    document.getElementById("addd").style.opacity="0";
+}
+if(sessionStorage.getItem("value1")!=null)
+{
+    document.getElementById("addd").style.backgroundColor="yellow";
+    document.getElementById("addd").style.padding="10px";
+
+
+}
+    
+    
     function ss()
     {
         var o1=sessionStorage.getItem("value1");
@@ -545,8 +385,11 @@
         var table=document.getElementById("kalu").getElementsByTagName('tbody')[0];
         var newRow=table.insertRow(table.length);
         cell1=newRow.insertCell(0);
-        cell1.style.backgroundImage="url('https://st.depositphotos.com/1020618/2013/i/600/depositphotos_20136185-stock-photo-delicious-italian-pizza.jpg')";
-        
+        cell1.style.backgroundImage="url('https://www.oetker.in/Recipe/Recipes/oetker.in/in-en/pizza/image-thumb__52711__RecipeDetailsLightBox/pizza-pollo-arrosto.jpg')";
+        cell1.style.backgroundPosition="center";
+        cell1.style.backgroundSize="cover";
+        cell1.style.width="200px";
+        cell1.style.height="160px";
         cell2=newRow.insertCell(1);
         cell2.innerHTML=data.pizza0a;
         cell3=newRow.insertCell(2);
@@ -557,23 +400,17 @@
         cell5=innerHTML=data.pricea;
         cell6=newRow.insertCell(5);
         cell6.innerHTML = `
-                        <a onClick="">ADD</a>`;
-        cell6.style.backgroundColor="green";                
+                          <a onClick="" style="background-color:"red";>ADD</a>`;
+                        
+                       
 
         
        
                          
 
     }
+    document.getElementById("addd").style.display="none";
    
     
     }
 
-
-
-
-
-    </script> -->
-    
-</body>
-</html>
